@@ -2,10 +2,25 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strict": true,
+    "strictPropertyInitialization": false,
     "baseUrl": "./",
+    "paths": {
+      "@core/*": [
+        "./src/app/core/*"
+      ],
+      "@pages/*": [
+        "./src/app/pages/*"
+      ],
+      "@shared/*": [
+        "./src/app/shared/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,

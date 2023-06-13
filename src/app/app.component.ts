@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hotel';
+  links = ['First', 'Second', 'Third'];
+  activeLink = this.links[0];
 }
