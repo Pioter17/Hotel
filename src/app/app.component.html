@@ -2,21 +2,7 @@
 Tu będzie logo hotelu
 </header>
 <img src="assets/images/img1.jpg" alt="costam">
-<nav
-  mat-tab-nav-bar
-  [tabPanel]="tabPanel"
->
-  <a
-    mat-tab-link
-    *ngFor="let link of links"
-     (click)="activeLink = link"
-     [active]="activeLink == link"
-  >
-    {{link}}
-  </a>
-</nav>
-<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
-<router-outlet></router-outlet>
+<app-tabs></app-tabs>
 <footer>
   Tu będzie stopka strony.
 </footer>

@@ -1,3 +1,18 @@
-<p>
-  tabs works!
-</p>
+<nav
+  mat-tab-nav-bar
+  [tabPanel]="tabPanel"
+>
+  <a
+    mat-tab-link
+    *ngFor="let link of routerLinks; let i = index"
+      [routerLink]="link"
+      routerLinkActive="active"
+      (click)="activeLink = links[i]"
+      [active]="activeLink == links[i]"
+  >
+    {{links[i]}}
+  </a>
+</nav>
+<mat-tab-nav-panel #tabPanel>
+  <router-outlet></router-outlet>
+</mat-tab-nav-panel>
