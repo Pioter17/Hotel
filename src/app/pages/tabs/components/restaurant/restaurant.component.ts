@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Restaurant } from '@pages/tabs/interfaces/restaurant';
+import { RestaurantService } from '@pages/tabs/services/restaurant.service';
 
 @Component({
   selector: 'app-restaurant',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantComponent implements OnInit {
 
-  constructor() { }
+  restaurant : Restaurant[];
+
+  constructor(
+    private restaurantService : RestaurantService
+  ) { }
 
   ngOnInit() {
+    this.restaurant = this.restaurantService.getRestaurantFeatures();
   }
-
 }
