@@ -1,0 +1,30 @@
+@import 'src/styles.scss';
+
+.home__rezervation__calendar {
+  border: 3px solid red;
+  text-align: center;
+  margin: 40px;
+  padding: 40px;
+}
+
+.faq__segment {
+  padding: 50px;
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+  border-color: $accent;
+  border-radius: 20px;
+}
+
+legend {
+  font-size: 24px;
+}
+
+mat-panel-title {
+  font-size: 16px;
+}
+
+p {
+  padding: 20px;
+  font-size: 16px;
+}

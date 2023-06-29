@@ -1,18 +1,17 @@
+<div class="header">
 <nav
-  mat-tab-nav-bar
-  [tabPanel]="tabPanel"
+  class="nav__low"
 >
   <a
-    mat-tab-link
     *ngFor="let link of routerLinks; let i = index"
       [routerLink]="link"
       routerLinkActive="active"
       (click)="activeLink = links[i]"
-      [active]="activeLink == links[i]"
+      class="nav__link"
+      [style.gridColumn] = "i+1"
   >
     {{links[i]}}
   </a>
 </nav>
-<mat-tab-nav-panel #tabPanel>
   <router-outlet></router-outlet>
-</mat-tab-nav-panel>
+</div>

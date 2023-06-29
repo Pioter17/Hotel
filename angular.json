@@ -47,6 +47,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "src/styles/theme.scss",
               "src/styles/breakpoints.scss"
             ],
             "scripts": []

@@ -1,3 +1,14 @@
-<p>
-  attractions works!
-</p>
+<div
+  class="attraction__element"
+  *ngFor="let attr of attractions"
+>
+  <div
+    class="description"
+  >
+    <h2> {{ attr.title }}</h2>
+    <p>
+      {{ attr.description }}
+    </p>
+  </div>
+  <img [src]="attr.image" alt="Zdjęcie poglądowe">
+</div>

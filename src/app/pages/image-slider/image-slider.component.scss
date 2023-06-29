@@ -1,0 +1,16 @@
+img {
+  width: 100%;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#display-image {
+  animation: fade 5s ease-in-out infinite;
+}

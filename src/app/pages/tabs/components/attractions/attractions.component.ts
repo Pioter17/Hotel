@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Attraction } from '@pages/tabs/interfaces/attraction.interface';
+import { AttractionsService } from '@pages/tabs/services/attractions.service';
 
 @Component({
   selector: 'app-attractions',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AttractionsComponent implements OnInit {
 
-  constructor() { }
+  attractions : Attraction[];
+
+  constructor(
+    private attractionService : AttractionsService
+  ) { }
 
   ngOnInit() {
+    this.attractions = this.attractionService.getAttractions();
   }
 
 }

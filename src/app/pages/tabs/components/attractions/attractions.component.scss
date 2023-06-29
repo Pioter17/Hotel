@@ -1,0 +1,30 @@
+.attraction__element {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  width: 70%;
+  margin: auto;
+  margin-top: 60px;
+}
+
+.description {
+  text-align: justify;
+}
+
+.attraction__element:nth-child(even) .description {
+  order: 2;
+}
+
+.attraction__element:nth-child(even) img {
+  order: 1;
+  margin-right: 20px;
+}
+
+.attraction__element:nth-child(odd) .description {
+  order: 1;
+}
+
+.attraction__element:nth-child(odd) img {
+  order: 2;
+  margin-left: 20px;
+}

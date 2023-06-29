@@ -1,0 +1,14 @@
+<div
+  *ngFor="let teaser of teasers; let i = index"
+  class="feature"
+>
+  <div class="description">
+    <h2> {{ teaser.title }} </h2>
+    <p> {{ teaser.description }} </p>
+    <a
+      [routerLink]="teaser.link"
+      (click)="navigation(teaser.link)"
+    > {{ teaser.linkName }} </a>
+  </div>
+  <img [src]="teaser.image" alt="Zdjęcie poglądowe">
+</div>
