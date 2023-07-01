@@ -1,0 +1,54 @@
+@import 'src/styles.scss';
+
+.apartment {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  width: 70%;
+  margin: auto;
+  // margin-top: 60px;
+  padding: 20px;
+}
+
+.apartment:hover {
+  background-color: darken($color: #e8e5e5e2, $amount: 0);
+}
+
+.apartment:first-of-type {
+  margin-top: 60px;
+}
+
+.description {
+  text-align: justify;
+  order: 1;
+  padding: 20px;
+}
+
+button {
+  margin: 10px 10px 10px 0;
+  padding: 25px;
+  border: 2px solid $accent;
+}
+
+img {
+  order: 2;
+  margin-left: 20px;
+}
+
+// .apartment:nth-child(even) .description {
+//   order: 2;
+// }
+
+// .apartment:nth-child(even) img {
+//   order: 1;
+//   margin-right: 20px;
+// }
+
+// .apartment:nth-child(odd) .description {
+//   order: 1;
+// }
+
+// .apartment:nth-child(odd) img {
+//   order: 2;
+//   margin-left: 20px;
+// }

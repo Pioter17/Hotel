@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Apartments } from '@pages/tabs/interfaces/apartments';
+import { ApartmentsService } from '@pages/tabs/services/apartments.service';
 
 @Component({
   selector: 'app-apartments',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApartmentsComponent implements OnInit {
 
-  constructor() { }
+  apartments: Apartments[];
+
+  constructor(
+    private apartmentsService: ApartmentsService,
+  ) { }
 
   ngOnInit() {
+    this.apartments = this.apartmentsService.getApartments();
   }
 
 }

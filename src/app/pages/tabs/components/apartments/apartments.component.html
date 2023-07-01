@@ -1,3 +1,17 @@
-<p>
-  apartments works!
-</p>
+<div
+  *ngFor="let apartment of apartments"
+  class="apartment"
+>
+  <div class="description">
+    <h2> {{ apartment.name }} </h2>
+    <p> {{ apartment.description }} </p>
+    <p> Max. osób: {{ apartment.capacity }} </p>
+    <p> Cena za dobę: {{ apartment.price }}PLN </p>
+    <button
+      mat-button
+    >
+      Rezerwuj
+    </button>
+  </div>
+  <img [src]="apartment.image" alt="Zdjęcie poglądowe">
+</div>
