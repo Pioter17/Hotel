@@ -1,3 +1,5 @@
+@import 'src/styles/breakpoints.scss';
+
 .attraction__element {
   display: flex;
   align-items: center;
@@ -28,4 +30,35 @@
 .attraction__element:nth-child(odd) img {
   order: 2;
   margin-left: 20px;
+}
+
+@media screen and (max-width:$screen-md-min) {
+  .attraction__element {
+    width: 70%;
+    flex-direction: column;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: justify;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .attraction__element:nth-child(even) .description {
+    order: 1;
+  }
+
+  .attraction__element:nth-child(even) img {
+    order: 2;
+    margin: 0;
+    width: 70vw;
+    height: auto;
+  }
+
+  .attraction__element:nth-child(odd) img {
+    margin: 0;
+    width: 70vw;
+    height: auto;
+  }
 }

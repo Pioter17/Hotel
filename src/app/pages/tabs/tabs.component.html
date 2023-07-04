@@ -1,17 +1,17 @@
 <div class="header">
-<nav
-  class="nav__low"
->
-  <a
-    *ngFor="let link of routerLinks; let i = index"
-      [routerLink]="link"
-      routerLinkActive="active"
-      (click)="activeLink = links[i]"
-      class="nav__link"
-      [style.gridColumn] = "i+1"
+  <nav
+    class="nav__low"
   >
-    {{links[i]}}
-  </a>
-</nav>
+    <a
+      *ngFor="let link of routerLinks; let i = index"
+        [routerLink]="link"
+        routerLinkActive="active"
+        (click)="activeLink = links[i]"
+        class="nav__link"
+        [style.gridColumn] = "i+1"
+    >
+      {{links[i]}}
+    </a>
+  </nav>
   <router-outlet></router-outlet>
 </div>

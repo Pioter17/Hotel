@@ -28,7 +28,7 @@ export class FaqService {
               "Ceny są takie same, ale panują tam dodatkowe zasady dotyczące zachowania ciszy, co ułatwia odpoczynek osobom chcącym się zrelaksować bez żadnych szumów.",
     },
     {
-      question: "Czy hotel zapewnia infrastrukturę dla osób niepełnosprawnych?",
+      question: "Czy jest infrastruktura dla osób niepełnosprawnych?",
       answer: "Tak! Nasz hotel zapewnia wszelką potrzebną infrastrukturę dla osób z niepełnosprawnością ruchową. "+
               "Przy każdych schodach jest winda lub podjazd, a nasi pracownicy z chęcią pomogą każdemu gościowi.",
     }

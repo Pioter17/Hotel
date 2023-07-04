@@ -1,4 +1,5 @@
 @import 'src/styles.scss';
+@import 'src/styles/breakpoints.scss';
 
 .home__rezervation__calendar {
   border: 3px solid red;
@@ -27,4 +28,12 @@ mat-panel-title {
 p {
   padding: 20px;
   font-size: 16px;
+}
+
+@media screen and (max-width:$screen-md-min) {
+  .faq__segment {
+    padding: 15px;
+    margin-top: 30px;
+    height: auto;
+  }
 }
