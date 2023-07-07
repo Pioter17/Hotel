@@ -31,6 +31,10 @@ export class FaqService {
       question: "Czy jest infrastruktura dla osób niepełnosprawnych?",
       answer: "Tak! Nasz hotel zapewnia wszelką potrzebną infrastrukturę dla osób z niepełnosprawnością ruchową. "+
               "Przy każdych schodach jest winda lub podjazd, a nasi pracownicy z chęcią pomogą każdemu gościowi.",
+    },
+    {
+      question: "Ile trwa doba hotelowa?",
+      answer: "W naszym hotelu doba hotelowa zaczyna się od godziny 15 i trwa do godziny 12 następnego dnia."
     }
   ];
 

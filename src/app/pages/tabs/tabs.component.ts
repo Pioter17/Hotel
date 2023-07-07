@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { WINDOW } from '@core/window.token';
 
@@ -8,6 +8,9 @@ import { WINDOW } from '@core/window.token';
   styleUrls: ['./tabs.component.scss'],
 })
 export class TabsComponent implements OnInit {
+
+  isPhone : boolean = false;
+  windowWidth : number;
 
   title = 'Hotel';
   links = ['O nas', 'Pokoje', 'Atrakcje', 'Restauracja', 'Rezerwacje', 'Galeria', 'Konto'];
@@ -20,8 +23,23 @@ export class TabsComponent implements OnInit {
     @Inject(WINDOW) private window: Window
   ) { }
 
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: Event) {
+  this.windowWidth = this.window.innerWidth;
+  if(this.windowWidth <= 768){
+    this.isPhone = true;
+  } else {
+    this.isPhone = false;
+  }
+  // Dodaj tutaj logikę reakcji na zmianę szerokości okna
+}
 
   ngOnInit() {
+    this.windowWidth = this.window.innerWidth;
+    if(this.windowWidth <= 768){
+      this.isPhone = true;
+    }
+
     this.window.addEventListener('scroll', () => {
       const navbar = this.document.querySelector('nav');
       const header : HTMLElement | null = this.document.querySelector('header');

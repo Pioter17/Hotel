@@ -6,7 +6,11 @@
   font-size: 18px;
   width: 70%;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 70px;
+}
+
+.feature:first-of-type {
+  margin-top: 100px;
 }
 
 .description {
@@ -32,13 +36,21 @@
   margin-left: 20px;
 }
 
-@media screen and (max-width:$screen-md-min) {
+@media screen and (min-width:$screen-md-min) and (max-width:$screen-xl-min) {
   .feature {
-    width: 70%;
+    width: 80%;
     flex-direction: column;
-    font-size: 16px;
-    margin-top: 20px;
     text-align: justify;
+    padding: 15px;
+    margin-top: 0px;
+  }
+
+  .feature:first-of-type {
+    margin-top: 40px;
+  }
+
+  .description {
+    padding: 0 10% 2% 10%;
   }
 
   h2 {
@@ -52,13 +64,48 @@
   .feature:nth-child(even) img {
     order: 2;
     margin: 0;
-    width: 70vw;
+    width: 80%;
     height: auto;
   }
 
   .feature:nth-child(odd) img {
     margin: 0;
-    width: 70vw;
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width:$screen-md-min) {
+  .feature {
+    width: 96%;
+    flex-direction: column;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: justify;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .description {
+    padding: 0 5% 2% 5%;
+  }
+
+  .feature:nth-child(even) .description {
+    order: 1;
+  }
+
+  .feature:nth-child(even) img {
+    order: 2;
+    margin: 0;
+    width: 90%;
+    height: auto;
+  }
+
+  .feature:nth-child(odd) img {
+    margin: 0;
+    width: 90%;
     height: auto;
   }
 }
