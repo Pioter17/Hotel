@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryComponent implements OnInit {
 
-  constructor() { }
+  names = ['apartment', 'background', 'attraction', 'restaurant', 'teaser'];
+
+  path = 'assets/images/';
+
+  constructor(
+  ) { }
 
   ngOnInit() {
   }

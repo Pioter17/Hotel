@@ -1,3 +1,24 @@
-<p>
-  gallery works!
-</p>
+<div
+  class="image__container"
+>
+  <img
+    *ngFor="let i of [1,2,3,4,5,6]"
+    [src]="path + 'apartment_img' + i + '.jpg'"
+    alt="obrazek"
+  >
+  <img
+    *ngFor="let i of [1,2,3,4,5,6]"
+    [src]="path + 'attraction_img' + i + '.jpg'"
+    alt="obrazek"
+  >
+  <img
+    *ngFor="let i of [1,2,3,4,5]"
+    [src]="path + 'restaurant_img' + i + '.jpg'"
+    alt="obrazek"
+  >
+  <img
+    *ngFor="let i of [1,2,3,4,5]"
+    [src]="path + 'teaser_img' + i + '.jpg'"
+    alt="obrazek"
+  >
+</div>

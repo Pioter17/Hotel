@@ -1,0 +1,37 @@
+@import 'src/styles/breakpoints';
+
+.image__container {
+  width: 70%;
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 45%;
+  width: 50vw;
+  height: auto;
+  margin: 0.5vw;
+}
+
+@media screen and (min-width:$screen-md-min) and (max-width:$screen-xl-min) {
+  .image__container {
+    width: 80vw;
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width:$screen-md-min) {
+  .image__container {
+    width: 96%;
+    margin-top: 50px;
+}
+
+  img {
+    max-width: 100%;
+    width: 80vw;
+  }
+}
