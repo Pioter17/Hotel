@@ -9,7 +9,9 @@ import { TabsComponent } from './pages/tabs/tabs.component';
 import { WINDOW } from '@core/window.token';
 import { ImageSliderComponent } from './pages/image-slider/image-slider.component';
 import { MatMenuModule } from '@angular/material/menu'
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons'
 
 @NgModule({
   declarations: [
@@ -23,7 +25,10 @@ import { MatIconModule } from '@angular/material/icon'
     MatTabsModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule
   ],
   providers: [
     { provide: WINDOW, useValue: window },

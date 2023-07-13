@@ -1,4 +1,12 @@
+
 @use '@angular/material' as mat;
+@use 'themes' as *;
+
+@use '@nebular/theme/styles/globals' as *;
+
+@include nb-install() {
+  @include nb-theme-global();
+};
 
 @include mat.core();
 

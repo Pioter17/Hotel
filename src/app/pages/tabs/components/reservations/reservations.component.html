@@ -1,3 +1,41 @@
-<p>
-  reservations works!
-</p>
+<nb-stepper orientation="vertical" linear="true">
+  <nb-step [stepControl]="nameForm" label="Name">
+    <form #nameForm="ngForm" class="step-container">
+      <div class="input-group">
+        <input type="text"
+               placeholder="Enter your name"
+               class="form-control"
+               name="name"
+               required
+               nbInput
+               ngModel
+               #name="ngModel">
+      </div>
+      <button nbButton nbStepperNext>next</button>
+    </form>
+  </nb-step>
+  <nb-step label="Data przyjazdu">
+      <ng-template #stepLabel>
+          <div>
+              step number two
+          </div>
+      </ng-template>
+      // ... step content here
+  </nb-step>
+  <nb-step label="Data odjazdu">
+    <ng-template #stepLabel>
+        <div>
+            step number 3
+        </div>
+    </ng-template>
+    // ... step content here
+  </nb-step>
+  <nb-step label="Podsumowanie">
+    <ng-template #stepLabel>
+        <div>
+            step number 4
+        </div>
+    </ng-template>
+    // ... step content here
+  </nb-step>
+</nb-stepper>
