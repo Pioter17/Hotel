@@ -32,6 +32,10 @@ const routes: Routes = [
     loadChildren: ()=> import('@pages/tabs/components/restaurant/restaurant.module').then(m => m.RestaurantModule),
   },
   {
+    path: 'account',
+    loadChildren: ()=> import('@pages/tabs/components/account/account.module').then(m => m.AccountModule),
+  },
+  {
     path: "**",
     loadChildren: ()=> import('@pages/tabs/components/home/home.module').then(m => m.HomeModule),
   }

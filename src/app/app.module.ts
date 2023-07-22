@@ -16,7 +16,7 @@ import { TabsComponent } from './pages/tabs/tabs.component';
   declarations: [
     AppComponent,
     TabsComponent,
-    ImageSliderComponent
+    ImageSliderComponent,
   ],
   imports: [
     BrowserModule,

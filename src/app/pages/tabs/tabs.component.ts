@@ -31,7 +31,6 @@ export class TabsComponent implements OnInit {
   } else {
     this.isPhone = false;
   }
-  // Dodaj tutaj logikę reakcji na zmianę szerokości okna
 }
 
   ngOnInit() {
