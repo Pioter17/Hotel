@@ -4,7 +4,7 @@
 ZAKŁADKA W TRAKCIE BUDOWY
 </div>
 
-<nb-stepper orientation="vertical" linear="true">
+<nb-stepper orientation="vertical" linear="true" disableStepNavigation>
   <nb-step [stepControl]="nameForm" label="Pokój">
     <form #nameForm="ngForm" class="step-container">
       <div class="input-group">
@@ -17,24 +17,38 @@ ZAKŁADKA W TRAKCIE BUDOWY
                ngModel
                #name="ngModel">
       </div>
-      <button nbButton nbStepperNext>next</button>
+      <button nbButton nbStepperNext>Dalej</button>
     </form>
   </nb-step>
-  <nb-step label="Data przyjazdu">
-      <ng-template #stepLabel>
-          <div>
-              step number two
-          </div>
-      </ng-template>
-      // ... step content here
+  <nb-step [stepControl]="arrivalForm" label="Data przyjazdu">
+    <form #arrivalForm="ngForm" class="step-container">
+      <div class="input-group">
+        <input type="text"
+               placeholder="Enter your name"
+               class="form-control"
+               name="name"
+               required
+               nbInput
+               ngModel
+               #name="ngModel">
+      </div>
+      <button nbButton nbStepperNext>Dalej</button>
+    </form>
   </nb-step>
-  <nb-step label="Data odjazdu">
-    <ng-template #stepLabel>
-        <div>
-            step number 3
-        </div>
-    </ng-template>
-    // ... step content here
+  <nb-step [stepControl]="departureForm" label="Data odjazdu">
+    <form #departureForm="ngForm" class="step-container">
+      <div class="input-group">
+        <input type="text"
+               placeholder="Enter your name"
+               class="form-control"
+               name="name"
+               required
+               nbInput
+               ngModel
+               #name="ngModel">
+      </div>
+      <button nbButton nbStepperNext>Dalej</button>
+    </form>
   </nb-step>
   <nb-step label="Podsumowanie">
     <ng-template #stepLabel>
@@ -43,5 +57,6 @@ ZAKŁADKA W TRAKCIE BUDOWY
         </div>
     </ng-template>
     // ... step content here
+    <button nbButton nbStepperPrevious>Wróć</button>
   </nb-step>
 </nb-stepper>
