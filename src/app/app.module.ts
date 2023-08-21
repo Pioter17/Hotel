@@ -6,7 +6,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WINDOW } from '@core/window.token';
-import { NbLayoutModule, NbThemeModule } from '@nebular/theme';
+import { NbDatepickerModule, NbLayoutModule, NbThemeModule } from '@nebular/theme';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ImageSliderComponent } from './pages/image-slider/image-slider.component';
@@ -26,7 +26,8 @@ import { TabsComponent } from './pages/tabs/tabs.component';
     MatMenuModule,
     MatIconModule,
     NbThemeModule.forRoot({ name: 'default' }),
-    NbLayoutModule,
+    NbDatepickerModule.forRoot(),
+    NbLayoutModule
   ],
   providers: [
     { provide: WINDOW, useValue: window },

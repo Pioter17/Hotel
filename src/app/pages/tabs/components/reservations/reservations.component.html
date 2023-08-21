@@ -8,46 +8,41 @@ ZAKŁADKA W TRAKCIE BUDOWY
   <nb-step [stepControl]="nameForm" label="Pokój">
     <form #nameForm="ngForm" class="step-container">
       <div class="input-group">
-        <input type="text"
-               placeholder="Enter your name"
+        <nb-select
+               placeholder="Wybierz pokój"
                class="form-control"
-               name="name"
+               name="rooms"
                required
-               nbInput
-               ngModel
-               #name="ngModel">
+               [(ngModel)]="selectedRoom"
+               #name="ngModel"
+        >
+          <nb-option
+            *ngFor="let room of rooms"
+            [value]="room.name"
+          >
+            {{ room.name }}
+          </nb-option>
+        </nb-select>
       </div>
-      <button nbButton nbStepperNext>Dalej</button>
+      <button nbButton outline status="primary" nbStepperNext>Dalej</button>
     </form>
   </nb-step>
   <nb-step [stepControl]="arrivalForm" label="Data przyjazdu">
     <form #arrivalForm="ngForm" class="step-container">
       <div class="input-group">
-        <input type="text"
-               placeholder="Enter your name"
+        <input [nbDatepicker]="rangePicker"
+               placeholder="Wybierz datę przyjazdu"
                class="form-control"
-               name="name"
+               name="arrival"
                required
                nbInput
                ngModel
-               #name="ngModel">
+               #name="ngModel"
+        >
+        <nb-rangepicker #rangePicker></nb-rangepicker>
       </div>
-      <button nbButton nbStepperNext>Dalej</button>
-    </form>
-  </nb-step>
-  <nb-step [stepControl]="departureForm" label="Data odjazdu">
-    <form #departureForm="ngForm" class="step-container">
-      <div class="input-group">
-        <input type="text"
-               placeholder="Enter your name"
-               class="form-control"
-               name="name"
-               required
-               nbInput
-               ngModel
-               #name="ngModel">
-      </div>
-      <button nbButton nbStepperNext>Dalej</button>
+      <button nbButton hero status="warning" shape="semi-round" nbStepperNext>Dalej</button>
+      <button nbButton nbStepperPrevious>Wróć</button>
     </form>
   </nb-step>
   <nb-step label="Podsumowanie">
