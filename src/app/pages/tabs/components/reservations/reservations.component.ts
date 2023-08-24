@@ -21,14 +21,39 @@ export class ReservationsComponent implements OnInit {
     });
   }
 
-  rooms: Apartments[]
+  rooms: Apartments[];
+  availableRooms: String[] = [];
 
   selectedRoom : string;
-  selectedArrivalDate: Date = new Date();
-  selectedDepartureDate: Date = new Date();
+  maxPeople: number;
+
+  // selectedArrivalDate: Date = new Date();
+  // selectedDepartureDate: Date = new Date();
 
   ngOnInit() {
     this.rooms = this.apartments.getApartments();
+    this.maxPeople = 1;
+    this.rooms.forEach(room => {
+      this.availableRooms.push(room.name);
+    })
+  }
+
+  filterRooms(people: number) {
+    this.availableRooms = [];
+    this.rooms.forEach(room => {
+      if(room.capacity >= people){
+        this.availableRooms.push(room.name);
+      }
+    });
+  }
+
+  setNumberOfPeople() {
+    this.rooms.forEach(room => {
+      if(room.name == this.selectedRoom){
+        this.maxPeople = room.capacity;
+        this.filterRooms(this.maxPeople);
+      }
+    })
   }
 
 }

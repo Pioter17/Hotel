@@ -5,24 +5,34 @@ ZAKŁADKA W TRAKCIE BUDOWY
 </div>
 
 <nb-stepper orientation="vertical" linear="true" disableStepNavigation>
-  <nb-step [stepControl]="nameForm" label="Pokój">
-    <form #nameForm="ngForm" class="step-container">
+  <nb-step [stepControl]="roomForm" label="Pokój">
+    <form #roomForm="ngForm" class="step-container">
       <div class="input-group">
         <nb-select
-               placeholder="Wybierz pokój"
-               class="form-control"
-               name="rooms"
-               required
-               [(ngModel)]="selectedRoom"
-               #name="ngModel"
+          placeholder="{{ availableRooms.length ? 'Wybierz pokój' : 'Brak dostępnych pokoi dla tylu osób' }}"
+          class="form-control"
+          name="rooms"
+          required
+          [(ngModel)]="selectedRoom"
+          #name="ngModel"
+          (selectedChange)="setNumberOfPeople()"
         >
           <nb-option
-            *ngFor="let room of rooms"
-            [value]="room.name"
+            *ngFor="let room of availableRooms"
+            [value]="room"
           >
-            {{ room.name }}
+            {{ room }}
           </nb-option>
         </nb-select>
+        <input
+          name="people"
+          [value]="maxPeople"
+          type="number"
+          nbInput
+          required
+          [(ngModel)]="maxPeople"
+          (change)="filterRooms(maxPeople)"
+        >
       </div>
       <button nbButton outline status="primary" nbStepperNext>Dalej</button>
     </form>
@@ -31,13 +41,13 @@ ZAKŁADKA W TRAKCIE BUDOWY
     <form #arrivalForm="ngForm" class="step-container">
       <div class="input-group">
         <input [nbDatepicker]="rangePicker"
-               placeholder="Wybierz datę przyjazdu"
-               class="form-control"
-               name="arrival"
-               required
-               nbInput
-               ngModel
-               #name="ngModel"
+          placeholder="Wybierz datę przyjazdu"
+          class="form-control"
+          name="arrival"
+          required
+          nbInput
+          ngModel
+          #name="ngModel"
         >
         <nb-rangepicker #rangePicker></nb-rangepicker>
       </div>
@@ -48,7 +58,7 @@ ZAKŁADKA W TRAKCIE BUDOWY
   <nb-step label="Podsumowanie">
     <ng-template #stepLabel>
         <div>
-            step number 4
+          step number 4
         </div>
     </ng-template>
     // ... step content here
