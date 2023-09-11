@@ -6,11 +6,13 @@ ZAKŁADKA W TRAKCIE BUDOWY
 
 <nb-stepper orientation="vertical" linear="true" disableStepNavigation>
   <nb-step [stepControl]="roomForm" label="Pokój">
-    <form #roomForm="ngForm" class="step-container">
-      <div class="input-group">
+    <form #roomForm="ngForm" class="step__container">
+      <h2>Wybierz pokój i liczbę osób</h2>
+      <div class="input__group">
         <nb-select
+          status="primary"
           placeholder="{{ availableRooms.length ? 'Wybierz pokój' : 'Brak dostępnych pokoi dla tylu osób' }}"
-          class="form-control"
+          class="room__select"
           name="rooms"
           required
           [(ngModel)]="selectedRoom"
@@ -25,43 +27,61 @@ ZAKŁADKA W TRAKCIE BUDOWY
           </nb-option>
         </nb-select>
         <input
+          class="number__of__guests"
           name="people"
           [value]="maxPeople"
           type="number"
+          min="1"
           nbInput
           required
           [(ngModel)]="maxPeople"
           (change)="filterRooms(maxPeople)"
         >
       </div>
-      <button nbButton outline status="primary" nbStepperNext>Dalej</button>
+      <button nbButton outline status="primary" shape="semi-round" class="next" nbStepperNext>Dalej</button>
     </form>
   </nb-step>
   <nb-step [stepControl]="arrivalForm" label="Data przyjazdu">
-    <form #arrivalForm="ngForm" class="step-container">
-      <div class="input-group">
+    <form #arrivalForm="ngForm" class="step__container">
+      <h2>Pobyt</h2>
+      <div class="input__group">
         <input [nbDatepicker]="rangePicker"
-          placeholder="Wybierz datę przyjazdu"
-          class="form-control"
+          status="primary"
+          placeholder="Wybierz termin pobytu"
+          class="stay__date"
           name="arrival"
           required
           nbInput
-          ngModel
+          [(ngModel)]="stayDateRange"
           #name="ngModel"
         >
-        <nb-rangepicker #rangePicker></nb-rangepicker>
+        <nb-rangepicker
+          #rangePicker
+          status="primary"
+          placeholder="Wybierz termin pobytu"
+          class="stay__date"
+          name="arrival"
+          required
+          [(ngModel)]="stayDateRange"
+        ></nb-rangepicker>
       </div>
-      <button nbButton hero status="warning" shape="semi-round" nbStepperNext>Dalej</button>
-      <button nbButton nbStepperPrevious>Wróć</button>
+      <button nbButton outline status="primary" shape="semi-round" class="next" nbStepperNext>Dalej</button>
+      <button nbButton outline status="primary" shape="semi-round" class="back" nbStepperPrevious>Wróć</button>
     </form>
   </nb-step>
   <nb-step label="Podsumowanie">
-    <ng-template #stepLabel>
-        <div>
-          step number 4
-        </div>
-    </ng-template>
-    // ... step content here
-    <button nbButton nbStepperPrevious>Wróć</button>
+    <div
+      class="summary"
+    >
+      <ul>
+        <li>Liczba gości: {{ maxPeople }}</li>
+        <li>Pokój: {{ selectedRoom }}</li>
+        <li>Data przyjazdu: {{ stayDateRange.start |date }}</li>
+        <li>Data odjazdu: {{ stayDateRange.end | date }}</li>
+        <li>Dni pobytu: {{ daysDifference }}</li>
+        <li>Cena: {{ price * daysDifference }} </li>
+      </ul>
+    </div>
+    <button nbButton outline status="primary" shape="semi-round" class="back" nbStepperPrevious>Wróć</button>
   </nb-step>
 </nb-stepper>

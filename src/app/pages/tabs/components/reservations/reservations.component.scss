@@ -6,3 +6,29 @@
   margin: 20px;
   padding: 40px;
 }
+
+
+.step__container {
+  padding: 5px;
+}
+
+h2 {
+  margin-left: 25px;
+  margin-bottom: 5px;
+}
+
+.input__group {
+  padding: 10px;
+}
+
+.room__select, .stay__date, .number__of__guests {
+  margin: 15px;
+}
+
+::ng-deep .stay__date {
+  width: 250px; /* dostosuj szerokość według potrzeb */
+}
+
+.next, .back {
+  margin-left: 25px;
+}

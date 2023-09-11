@@ -9,6 +9,13 @@ export class ApartmentsService {
   private apartments : Apartments[] =
   [
     {
+      name: "Pokój Single",
+      description: "Niewielki, ale wygodny pokój dla singli. Wyposażony w wygodne łóżko, prywatną łazienkę oraz podstawowe udogodnienia. Przeznaczony głównie dla podróżnych chcących wygodnie spędzić noc",
+      capacity: 1,
+      price: 120,
+      image: ""
+    },
+    {
       name: "Pokój Standard",
       description: "Przytulny pokój idealny dla singli lub par. Zapewniający komfortowy pobyt i wystarczająco dużo przestrzeni do wypoczynku. Wyposażony w wygodne łóżko, prywatną łazienkę oraz podstawowe udogodnienia. Doskonały wybór dla tych, którzy szukają przyjemnego i przystępnego cenowo zakwaterowania.",
       capacity: 2,
@@ -54,6 +61,16 @@ export class ApartmentsService {
 
   getApartments(): Apartments[] {
     return this.apartments;
+  }
+
+  getApartmentPrice(name: string): number {
+    let price : number = 0;
+    this.apartments.forEach(apart =>{
+      if (apart.name == name){
+        price = apart.price;
+      }
+    })
+    return price;
   }
 
   constructor() { }
