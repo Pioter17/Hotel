@@ -65,11 +65,12 @@ ZAKŁADKA W TRAKCIE BUDOWY
           [(ngModel)]="stayDateRange"
         ></nb-rangepicker>
       </div>
-      <button nbButton outline status="primary" shape="semi-round" class="next" nbStepperNext>Dalej</button>
+      <button nbButton outline status="primary" shape="semi-round" class="next" nbStepperNext (click)="onDateRangeChange()">Dalej</button>
       <button nbButton outline status="primary" shape="semi-round" class="back" nbStepperPrevious>Wróć</button>
     </form>
   </nb-step>
   <nb-step label="Podsumowanie">
+    <h2>Podsumowanie</h2>
     <div
       class="summary"
     >
@@ -83,5 +84,6 @@ ZAKŁADKA W TRAKCIE BUDOWY
       </ul>
     </div>
     <button nbButton outline status="primary" shape="semi-round" class="back" nbStepperPrevious>Wróć</button>
+    <button nbButton outline status="primary" shape="semi-round" class="send">Zarezerwuj</button>
   </nb-step>
 </nb-stepper>

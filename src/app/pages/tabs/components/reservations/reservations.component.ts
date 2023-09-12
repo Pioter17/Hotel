@@ -49,7 +49,7 @@ export class ReservationsComponent implements OnInit {
     // this.price = this.apartments.getApartmentPrice(this.selectedRoom);
   }
 
-  onDateRangeChange(event: any) {
+  onDateRangeChange() {
     if (this.stayDateRange.start && this.stayDateRange.end) {
       const startDate = new Date(this.stayDateRange.start);
       const endDate = new Date(this.stayDateRange.end);
