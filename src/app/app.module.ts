@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ImageSliderComponent } from './pages/image-slider/image-slider.component';
 import { TabsComponent } from './pages/tabs/tabs.component';
+import { CUSTOM_THEME } from './theme';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TabsComponent } from './pages/tabs/tabs.component';
     MatMenuModule,
     MatIconModule,
     NbThemeModule.forRoot({ name: 'default' }),
+    // NbThemeModule.forRoot({ name: 'custom-theme' }),
     NbDatepickerModule.forRoot(),
     NbLayoutModule
   ],
