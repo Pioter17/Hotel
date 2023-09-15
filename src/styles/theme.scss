@@ -1,10 +1,10 @@
-@import '@nebular/theme/styles/theming';
-@import '@nebular/theme/styles/themes/default';
+// @import '@nebular/theme/styles/theming';
+// @import '@nebular/theme/styles/themes/default';
 
-$nb-themes: nb-register-theme(
-  (
-    primary: rgb(40, 180, 169), // Zdefiniuj niestandardowy kolor główny
-  ),
-  default,
-  default
-);
+// $nb-themes: nb-register-theme(
+//   (
+//     primary: rgb(40, 180, 169), // Zdefiniuj niestandardowy kolor główny
+//   ),
+//   default,
+//   default
+// );

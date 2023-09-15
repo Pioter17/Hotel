@@ -4,7 +4,15 @@
 
 $nb-themes: nb-register-theme(
   (
-    primary: rgb(40, 180, 169), // Zdefiniuj niestandardowy kolor główny
+    color-primary-100: #D4FBEA,
+    color-primary-200: #AAF7DC,
+    color-primary-300: #7BE8CC,
+    color-primary-400: #57D2BD,
+    color-primary-500: #28B4A9,
+    color-primary-600: #1D999A,
+    color-primary-700: #147681,
+    color-primary-800: #0C5668,
+    color-primary-900: #074056,
   ),
   default,
   default
