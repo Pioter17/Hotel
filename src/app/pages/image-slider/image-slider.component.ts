@@ -1,9 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-image-slider',
   templateUrl: './image-slider.component.html',
-  styleUrls: ['./image-slider.component.scss']
+  styleUrls: ['./image-slider.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+  ]
 })
 export class ImageSliderComponent implements OnInit {
 

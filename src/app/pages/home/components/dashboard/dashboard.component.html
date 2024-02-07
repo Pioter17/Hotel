@@ -1,0 +1,23 @@
+<!-- <div
+  class="home__rezervation__calendar"
+>
+  Tu będzie opcja rezerwacji terminu
+</div> -->
+<app-features-list />
+<fieldset class="faq__segment">
+  <legend>FAQ</legend>
+  <mat-accordion>
+    <mat-expansion-panel
+      *ngFor="let faq of faqElements"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ faq.question }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        {{ faq.answer }}
+      </p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</fieldset>

@@ -1,0 +1,36 @@
+<div class="header">
+  <nav
+    class="nav__low"
+    *ngIf="!isPhone"
+  >
+    <a
+      *ngFor="let link of routerLinks; let i = index"
+        [routerLink]="link"
+        routerLinkActive="active"
+        (click)="activeLink = links[i]"
+        class="nav__link"
+        [style.gridColumn] = "i+1"
+    >
+      {{links[i]}}
+    </a>
+  </nav>
+  <nav
+    class="second__nav"
+    *ngIf="isPhone"
+  >
+    <mat-icon mat-button [matMenuTriggerFor]="menu">menu</mat-icon>
+    <mat-menu #menu="matMenu">
+      <a
+        mat-menu-item
+        *ngFor="let link of routerLinks; let i = index"
+          [routerLink]="link"
+          routerLinkActive="active"
+          (click)="activeLink = links[i]"
+          class="second__nav__link"
+      >
+        {{links[i]}}
+      </a>
+    </mat-menu>
+  </nav>
+  <router-outlet />
+</div>
