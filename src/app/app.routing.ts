@@ -1,17 +1,18 @@
 import { Routes } from '@angular/router';
+import { PathRoutes } from '@core/constants/routes.const';
 
 export default [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: PathRoutes.HOME,
     pathMatch: "full"
   },
   {
-    path: 'home',
+    path: PathRoutes.HOME,
     loadChildren: ()=> import('@pages/home/home.routing')
   },
   // {
-  //   path: '/authorization',
+    // path: PathRoutes.AUTH,
   //   loadChildren: ()=> import('@pages/auth/auth.routing')
   // }
 ] as Routes;

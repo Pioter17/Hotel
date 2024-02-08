@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { FeatureTeasersList } from '@pages/home/constants/feature-teasers.const';
 import { FeatureTeaser } from '@pages/home/interfaces/dashboard.interface';
-import { FeatureTeaserListService } from '@pages/home/services/feature-teaser-list.service';
 
 @Component({
   selector: 'app-features-list',
@@ -19,12 +19,11 @@ export class FeaturesListComponent implements OnInit {
   teasers : FeatureTeaser[];
 
   constructor(
-    private featureTeaser: FeatureTeaserListService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-      this.teasers = this.featureTeaser.getAll();
+      this.teasers = FeatureTeasersList;
   }
 
   navigation(link: string): void {

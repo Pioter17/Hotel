@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { ApartmentsList } from '@pages/home/constants/apartments.const';
 import { Apartments } from '@pages/home/interfaces/apartments';
-import { ApartmentsService } from '@pages/home/services/apartments.service';
-import { MatButtonModule } from '@angular/material/button'
 
 @Component({
   selector: 'app-apartments',
@@ -18,12 +18,10 @@ export class ApartmentsComponent implements OnInit {
 
   apartments: Apartments[];
 
-  constructor(
-    private apartmentsService: ApartmentsService,
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.apartments = this.apartmentsService.getApartments();
+    this.apartments = ApartmentsList;
   }
 
 }

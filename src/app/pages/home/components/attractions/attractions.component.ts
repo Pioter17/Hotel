@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { AttractionsList } from '@pages/home/constants/attractions.const';
 import { Attraction } from '@pages/home/interfaces/attraction.interface';
-import { AttractionsService } from '@pages/home/services/attractions.service';
 
 @Component({
   selector: 'app-attractions',
@@ -16,12 +16,10 @@ export class AttractionsComponent implements OnInit {
 
   attractions : Attraction[];
 
-  constructor(
-    private attractionService : AttractionsService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.attractions = this.attractionService.getAttractions();
+    this.attractions = AttractionsList;
   }
 
 }

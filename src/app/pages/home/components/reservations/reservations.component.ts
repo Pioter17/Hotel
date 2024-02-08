@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
 import { NbButtonModule, NbDatepickerModule, NbInputModule, NbSelectModule, NbStepperModule } from '@nebular/theme';
+import { ApartmentsList } from '@pages/home/constants/apartments.const';
 import { Apartments } from '@pages/home/interfaces/apartments';
-import { ApartmentsService } from '@pages/home/services/apartments.service';
 
 @Component({
   selector: 'app-reservations',
@@ -26,7 +26,6 @@ export class ReservationsComponent implements OnInit {
   dateRangeForm: FormGroup;
 
   constructor(
-    private apartments: ApartmentsService,
     private fb: FormBuilder,
     ) {
     this.dateRangeForm = this.fb.group({
@@ -45,7 +44,7 @@ export class ReservationsComponent implements OnInit {
   price: number;
 
   ngOnInit() {
-    this.rooms = this.apartments.getApartments();
+    this.rooms = ApartmentsList;
     this.maxPeople = 1;
     this.rooms.forEach(room => {
       this.availableRooms.push(room.name);
@@ -94,7 +93,8 @@ export class ReservationsComponent implements OnInit {
       if(room.name == this.selectedRoom){
         this.maxPeople = room.capacity;
         this.filterRooms(this.maxPeople);
-        this.price = this.apartments.getApartmentPrice(this.selectedRoom);
+        let price = ApartmentsList.find((apartment => apartment.name == this.selectedRoom))?.price;
+        this.price = price ? price : 0;
       }
     })
   }

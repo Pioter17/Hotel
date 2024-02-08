@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
+import { PathRoutes } from '@core/constants/routes.const';
 import { HomeComponent } from '@pages/home/home.component';
 
 export default [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: PathRoutes.DASHBOARD,
     pathMatch: "full"
   },
   {
@@ -12,31 +13,31 @@ export default [
     component: HomeComponent,
     children: [
       {
-        path: 'dashboard',
+        path: PathRoutes.DASHBOARD,
         loadComponent: ()=> import('@pages/home/components/dashboard/dashboard.component').then(m => m.DashboardComponent),
       },
       {
-        path: 'apartments',
+        path: PathRoutes.APARTMENTS,
         loadComponent: ()=> import('@pages/home/components/apartments/apartments.component').then(m => m.ApartmentsComponent),
       },
       {
-        path: 'gallery',
+        path: PathRoutes.GALLERY,
         loadComponent: ()=> import('@pages/home/components/gallery/gallery.component').then(m => m.GalleryComponent),
       },
       {
-        path: 'reservations',
+        path: PathRoutes.RESERVATIONS,
         loadComponent: ()=> import('@pages/home/components/reservations/reservations.component').then(m => m.ReservationsComponent),
       },
       {
-        path: 'attractions',
+        path: PathRoutes.ATTRACTIONS,
         loadComponent: ()=> import('@pages/home/components/attractions/attractions.component').then(m => m.AttractionsComponent),
       },
       {
-        path: 'restaurant',
+        path: PathRoutes.RESTAURANT,
         loadComponent: ()=> import('@pages/home/components/restaurant/restaurant.component').then(m => m.RestaurantComponent),
       },
       {
-        path: 'account',
+        path: PathRoutes.ACCOUNT,
         loadComponent: ()=> import('@pages/home/components/account/account.component').then(m => m.AccountComponent),
       },
       {

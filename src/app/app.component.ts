@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NbLayoutModule } from '@nebular/theme';
-import { ImageSliderComponent } from '@pages/image-slider/image-slider.component';
+import { ImageSliderComponent } from '@shared/image-slider/image-slider.component';
 
 @Component({
   selector: 'app-root',

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { RestaurantFeaturesList } from '@pages/home/constants/restaurant.const';
 import { Restaurant } from '@pages/home/interfaces/restaurant';
-import { RestaurantService } from '@pages/home/services/restaurant.service';
 
 @Component({
   selector: 'app-restaurant',
@@ -16,11 +16,9 @@ export class RestaurantComponent implements OnInit {
 
   restaurant : Restaurant[];
 
-  constructor(
-    private restaurantService : RestaurantService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.restaurant = this.restaurantService.getRestaurantFeatures();
+    this.restaurant = RestaurantFeaturesList;
   }
 }
