@@ -91,6 +91,10 @@ a {
     text-align: justify;
   }
 
+  .feature:first-of-type {
+    margin-top: 20px;
+  }
+
   .description {
     padding: 0 5% 2% 5%;
   }

@@ -1,8 +1,8 @@
-import { Component, OnInit, Inject, HostListener } from '@angular/core';
-import { CommonModule, DOCUMENT } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-tabs',
@@ -27,10 +27,6 @@ export class HomeComponent implements OnInit {
 
   activeLink = this.links[0];
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-  ) { }
-
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: Event) {
   this.windowWidth = window.innerWidth;
@@ -48,8 +44,8 @@ export class HomeComponent implements OnInit {
     }
 
     window.addEventListener('scroll', () => {
-      const navbar = this.document.querySelector('nav');
-      const header : HTMLElement | null = this.document.querySelector('header');
+      const navbar = document.querySelector('nav');
+      const header : HTMLElement | null = document.querySelector('header');
 
       if (header && navbar) {
         const headerHeight = header.offsetHeight;
