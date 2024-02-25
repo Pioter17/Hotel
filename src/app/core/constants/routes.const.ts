@@ -1,6 +1,5 @@
 export const PathRoutes = {
   HOME: 'home',
-  AUTH: 'auth',
   DASHBOARD: 'dashboard',
   ACCOUNT: 'account',
   GALLERY: 'gallery',
@@ -8,4 +7,7 @@ export const PathRoutes = {
   RESERVATIONS: 'reservations',
   ATTRACTIONS: 'attractions',
   RESTAURANT: 'restaurant',
+  AUTH: 'auth',
+  LOGIN: 'login',
+  REGISTER: 'register'
 }
